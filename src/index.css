@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif-thai: "Noto Serif Thai", Georgia, serif;
+  --font-sans-thai: "Sarabun", system-ui, -apple-system, sans-serif;
+  --font-mono-num: "IBM Plex Mono", monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans-thai);
+    background-color: #fbf8f1;
+    color: #1f1a14;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-serif-thai);
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+  }
+}
